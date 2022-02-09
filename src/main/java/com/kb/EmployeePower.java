@@ -1,11 +1,6 @@
 package com.kb;
 
-public class EmployeePower implements ExpenseInterface {
-
-    @Override
-    public void setNext(ExpenseInterface e) {
-
-    }
+public class EmployeePower extends BaseExpense implements ExpenseInterface {
 
     @Override
     public void process(Money m) {

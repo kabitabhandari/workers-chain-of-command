@@ -1,13 +1,7 @@
 package com.kb;
 
-public class ManagerPower implements ExpenseInterface {
+public class ManagerPower  extends BaseExpense implements ExpenseInterface {
 
-    private ExpenseInterface sendToSupervisor;
-
-    @Override
-    public void setNext(ExpenseInterface e) {
-        this.sendToSupervisor = e;
-    }
 
     @Override
     public void process(Money m) {
@@ -17,7 +11,7 @@ public class ManagerPower implements ExpenseInterface {
             System.out.println("Manager Process Loading");
         }
         else{
-            sendToSupervisor.process(m);
+            sendToNextInChain.process(m);
         }
 
 
